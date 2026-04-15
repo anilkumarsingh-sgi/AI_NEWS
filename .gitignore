@@ -1,0 +1,22 @@
+# Virtual environment
+news/
+
+# Database
+*.db
+
+# Environment
+.env
+.streamlit/secrets.toml
+
+# Output
+output/
+logs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db

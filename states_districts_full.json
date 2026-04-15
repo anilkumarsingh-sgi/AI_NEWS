@@ -1,0 +1,928 @@
+{
+  "rajasthan": {
+    "name": "राजस्थान",
+    "url": "https://www.bhaskar.com/local/rajasthan/",
+    "districts": {
+      "jaipur": {
+        "name": "जयपुर",
+        "url": "https://www.bhaskar.com/local/rajasthan/jaipur/"
+      },
+      "balotra": {
+        "name": "बालोतरा",
+        "url": "https://www.bhaskar.com/local/rajasthan/balotra/"
+      },
+      "jodhpur": {
+        "name": "जोधपुर",
+        "url": "https://www.bhaskar.com/local/rajasthan/jodhpur/"
+      },
+      "ajmer": {
+        "name": "अजमेर",
+        "url": "https://www.bhaskar.com/local/rajasthan/ajmer/"
+      },
+      "sikar": {
+        "name": "सीकर",
+        "url": "https://www.bhaskar.com/local/rajasthan/sikar/"
+      },
+      "kota": {
+        "name": "कोटा",
+        "url": "https://www.bhaskar.com/local/rajasthan/kota/"
+      },
+      "jaisalmer": {
+        "name": "जैसलमेर",
+        "url": "https://www.bhaskar.com/local/rajasthan/jaisalmer/"
+      },
+      "udaipur": {
+        "name": "उदयपुर",
+        "url": "https://www.bhaskar.com/local/rajasthan/udaipur/"
+      },
+      "dholpur": {
+        "name": "धौलपुर",
+        "url": "https://www.bhaskar.com/local/rajasthan/dholpur/"
+      },
+      "bikaner": {
+        "name": "बीकानेर",
+        "url": "https://www.bhaskar.com/local/rajasthan/bikaner/"
+      },
+      "didwana": {
+        "name": "डीडवाना-कुचामन",
+        "url": "https://www.bhaskar.com/local/rajasthan/didwana/"
+      },
+      "alwar": {
+        "name": "अलवर",
+        "url": "https://www.bhaskar.com/local/rajasthan/alwar/"
+      },
+      "deeg": {
+        "name": "डीग",
+        "url": "https://www.bhaskar.com/local/rajasthan/deeg/"
+      },
+      "barmer": {
+        "name": "बाड़मेर",
+        "url": "https://www.bhaskar.com/local/rajasthan/barmer/"
+      },
+      "karauli": {
+        "name": "करौली",
+        "url": "https://www.bhaskar.com/local/rajasthan/karauli/"
+      },
+      "jalore": {
+        "name": "जालोर",
+        "url": "https://www.bhaskar.com/local/rajasthan/jalore/"
+      },
+      "dausa": {
+        "name": "दौसा",
+        "url": "https://www.bhaskar.com/local/rajasthan/dausa/"
+      },
+      "sawai-madhopur": {
+        "name": "सवाई माधोपुर",
+        "url": "https://www.bhaskar.com/local/rajasthan/sawai-madhopur/"
+      },
+      "pali": {
+        "name": "पाली (मारवाड़)",
+        "url": "https://www.bhaskar.com/local/rajasthan/pali/"
+      },
+      "tonk": {
+        "name": "टोंक",
+        "url": "https://www.bhaskar.com/local/rajasthan/tonk/"
+      },
+      "bharatpur": {
+        "name": "भरतपुर",
+        "url": "https://www.bhaskar.com/local/rajasthan/bharatpur/"
+      },
+      "bayavar": {
+        "name": "ब्यावर",
+        "url": "https://www.bhaskar.com/local/rajasthan/bayavar/"
+      },
+      "jhunjhunu": {
+        "name": "झुंझुनूं",
+        "url": "https://www.bhaskar.com/local/rajasthan/jhunjhunu/"
+      },
+      "khairthal": {
+        "name": "खैरथल-तिजारा",
+        "url": "https://www.bhaskar.com/local/rajasthan/khairthal/"
+      },
+      "bhilwara": {
+        "name": "Bhilwara",
+        "url": "https://www.bhaskar.com/local/rajasthan/bhilwara/"
+      },
+      "sriganganagar": {
+        "name": "Sriganganagar",
+        "url": "https://www.bhaskar.com/local/rajasthan/sriganganagar/"
+      },
+      "churu": {
+        "name": "Churu",
+        "url": "https://www.bhaskar.com/local/rajasthan/churu/"
+      }
+    }
+  },
+  "mp": {
+    "name": "मध्य प्रदेश",
+    "url": "https://www.bhaskar.com/local/mp/",
+    "districts": {
+      "bhopal": {
+        "name": "भोपाल",
+        "url": "https://www.bhaskar.com/local/mp/bhopal/"
+      },
+      "chhindwara": {
+        "name": "छिंदवाड़ा",
+        "url": "https://www.bhaskar.com/local/mp/chhindwara/"
+      },
+      "khandwa": {
+        "name": "खंडवा",
+        "url": "https://www.bhaskar.com/local/mp/khandwa/"
+      },
+      "satna": {
+        "name": "सतना",
+        "url": "https://www.bhaskar.com/local/mp/satna/"
+      },
+      "ratlam": {
+        "name": "रतलाम",
+        "url": "https://www.bhaskar.com/local/mp/ratlam/"
+      },
+      "jabalpur": {
+        "name": "जबलपुर",
+        "url": "https://www.bhaskar.com/local/mp/jabalpur/"
+      },
+      "katni": {
+        "name": "कटनी",
+        "url": "https://www.bhaskar.com/local/mp/katni/"
+      },
+      "sagar": {
+        "name": "सागर",
+        "url": "https://www.bhaskar.com/local/mp/sagar/"
+      },
+      "ujjain": {
+        "name": "उज्जैन",
+        "url": "https://www.bhaskar.com/local/mp/ujjain/"
+      },
+      "dindori": {
+        "name": "डिंडौरी",
+        "url": "https://www.bhaskar.com/local/mp/dindori/"
+      },
+      "mandsaur": {
+        "name": "मंदसौर",
+        "url": "https://www.bhaskar.com/local/mp/mandsaur/"
+      },
+      "shahdol": {
+        "name": "शहडोल",
+        "url": "https://www.bhaskar.com/local/mp/shahdol/"
+      },
+      "umaria": {
+        "name": "उमरिया",
+        "url": "https://www.bhaskar.com/local/mp/umaria/"
+      },
+      "indore": {
+        "name": "इंदौर",
+        "url": "https://www.bhaskar.com/local/mp/indore/"
+      },
+      "gwalior": {
+        "name": "ग्वालियर",
+        "url": "https://www.bhaskar.com/local/mp/gwalior/"
+      },
+      "raisen": {
+        "name": "रायसेन",
+        "url": "https://www.bhaskar.com/local/mp/raisen/"
+      },
+      "tikamgarh": {
+        "name": "टीकमगढ़",
+        "url": "https://www.bhaskar.com/local/mp/tikamgarh/"
+      },
+      "seoni": {
+        "name": "सिवनी",
+        "url": "https://www.bhaskar.com/local/mp/seoni/"
+      },
+      "rewa": {
+        "name": "रीवा",
+        "url": "https://www.bhaskar.com/local/mp/rewa/"
+      },
+      "narmadapuram": {
+        "name": "नर्मदापुरम (होशंगाबाद)",
+        "url": "https://www.bhaskar.com/local/mp/narmadapuram/"
+      },
+      "sidhi": {
+        "name": "सीधी",
+        "url": "https://www.bhaskar.com/local/mp/sidhi/"
+      },
+      "damoh": {
+        "name": "दमोह",
+        "url": "https://www.bhaskar.com/local/mp/damoh/"
+      },
+      "ashoknagar": {
+        "name": "अशोकनगर",
+        "url": "https://www.bhaskar.com/local/mp/ashoknagar/"
+      },
+      "burhanpur": {
+        "name": "बुरहानपुर (म.प्र.)",
+        "url": "https://www.bhaskar.com/local/mp/burhanpur/"
+      },
+      "vidisha": {
+        "name": "विदिशा",
+        "url": "https://www.bhaskar.com/local/mp/vidisha/"
+      },
+      "harda": {
+        "name": "हरदा",
+        "url": "https://www.bhaskar.com/local/mp/harda/"
+      },
+      "bhind": {
+        "name": "भिंड",
+        "url": "https://www.bhaskar.com/local/mp/bhind/"
+      },
+      "guna": {
+        "name": "गुना",
+        "url": "https://www.bhaskar.com/local/mp/guna/"
+      },
+      "morena": {
+        "name": "मुरैना",
+        "url": "https://www.bhaskar.com/local/mp/morena/"
+      },
+      "panna": {
+        "name": "पन्ना",
+        "url": "https://www.bhaskar.com/local/mp/panna/"
+      },
+      "betul": {
+        "name": "बैतूल",
+        "url": "https://www.bhaskar.com/local/mp/betul/"
+      },
+      "khargone": {
+        "name": "खरगोन",
+        "url": "https://www.bhaskar.com/local/mp/khargone/"
+      },
+      "sehore": {
+        "name": "Sehore",
+        "url": "https://www.bhaskar.com/local/mp/sehore/"
+      },
+      "shivpuri": {
+        "name": "Shivpuri",
+        "url": "https://www.bhaskar.com/local/mp/shivpuri/"
+      },
+      "dewas": {
+        "name": "Dewas",
+        "url": "https://www.bhaskar.com/local/mp/dewas/"
+      }
+    }
+  },
+  "uttar-pradesh": {
+    "name": "उत्तर प्रदेश",
+    "url": "https://www.bhaskar.com/local/uttar-pradesh/",
+    "districts": {
+      "bulandshahar": {
+        "name": "बुलंदशहर",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/bulandshahar/"
+      },
+      "kanpur": {
+        "name": "कानपुर",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/kanpur/"
+      },
+      "prayagraj": {
+        "name": "प्रयागराज (इलाहाबाद)",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/prayagraj/"
+      },
+      "lucknow": {
+        "name": "लखनऊ",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/lucknow/"
+      },
+      "mirzapur": {
+        "name": "मिर्जापुर",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/mirzapur/"
+      },
+      "varanasi": {
+        "name": "वाराणसी",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/varanasi/"
+      },
+      "mathura": {
+        "name": "मथुरा",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/mathura/"
+      },
+      "unnao": {
+        "name": "उन्नाव",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/unnao/"
+      },
+      "jhansi": {
+        "name": "झांसी",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/jhansi/"
+      },
+      "ghaziabad": {
+        "name": "गाजियाबाद",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/ghaziabad/"
+      },
+      "meerut": {
+        "name": "मेरठ",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/meerut/"
+      },
+      "aligarh": {
+        "name": "अलीगढ़",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/aligarh/"
+      },
+      "gorakhpur": {
+        "name": "गोरखपुर",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/gorakhpur/"
+      },
+      "gautambudh-nagar": {
+        "name": "नोएडा (गौतम बुद्ध नगर)",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/gautambudh-nagar/"
+      },
+      "basti": {
+        "name": "बस्ती",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/basti/"
+      },
+      "azamgarh": {
+        "name": "आजमगढ़",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/azamgarh/"
+      },
+      "moradabad": {
+        "name": "मुरादाबाद",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/moradabad/"
+      },
+      "agra": {
+        "name": "आगरा",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/agra/"
+      },
+      "saharanpur": {
+        "name": "सहारनपुर",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/saharanpur/"
+      },
+      "ayodhya": {
+        "name": "अयोध्या",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/ayodhya/"
+      },
+      "jaunpur": {
+        "name": "जौनपुर",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/jaunpur/"
+      },
+      "badaun": {
+        "name": "बदायूं",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/badaun/"
+      },
+      "siddharthnagar": {
+        "name": "सिद्धार्थनगर",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/siddharthnagar/"
+      },
+      "firozabad": {
+        "name": "फिरोजाबाद",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/firozabad/"
+      },
+      "bhadohi": {
+        "name": "भदोही (संत रविदास नगर)",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/bhadohi/"
+      },
+      "sitapur": {
+        "name": "सीतापुर",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/sitapur/"
+      },
+      "sant-kabir-nagar": {
+        "name": "संतकबीर नगर",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/sant-kabir-nagar/"
+      },
+      "ambedkarnagar": {
+        "name": "अम्बेडकरनगर",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/ambedkarnagar/"
+      },
+      "kanpur-dehat": {
+        "name": "कानपुर देहात",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/kanpur-dehat/"
+      },
+      "pratapgarh": {
+        "name": "प्रतापगढ़",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/pratapgarh/"
+      },
+      "gonda": {
+        "name": "गोंडा",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/gonda/"
+      },
+      "farrukhabad": {
+        "name": "फर्रुखाबाद",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/farrukhabad/"
+      },
+      "shahjahanpur": {
+        "name": "शाहजहांपुर",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/shahjahanpur/"
+      },
+      "hapud": {
+        "name": "हापुड़",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/hapud/"
+      },
+      "sultanpur": {
+        "name": "सुलतानपुर",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/sultanpur/"
+      },
+      "pilibhit": {
+        "name": "पीलीभीत",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/pilibhit/"
+      },
+      "ballia": {
+        "name": "बलिया",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/ballia/"
+      },
+      "barabanki": {
+        "name": "बाराबंकी",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/barabanki/"
+      },
+      "lakhimpur-kheri": {
+        "name": "लखीमपुर-खीरी",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/lakhimpur-kheri/"
+      },
+      "deoria": {
+        "name": "देवरिया",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/deoria/"
+      },
+      "fatehpur": {
+        "name": "फतेहपुर",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/fatehpur/"
+      },
+      "hathras": {
+        "name": "हाथरस",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/hathras/"
+      },
+      "maharajganj": {
+        "name": "महराजगंज",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/maharajganj/"
+      },
+      "muzaffarnagar": {
+        "name": "मुजफ्फरनगर",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/muzaffarnagar/"
+      },
+      "shrawasti": {
+        "name": "श्रावस्ती",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/shrawasti/"
+      },
+      "kannauj": {
+        "name": "कन्नौज",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/kannauj/"
+      },
+      "raibareli": {
+        "name": "Raibareli",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/raibareli/"
+      },
+      "bareilly": {
+        "name": "Bareilly",
+        "url": "https://www.bhaskar.com/local/uttar-pradesh/bareilly/"
+      }
+    }
+  },
+  "bihar": {
+    "name": "बिहार",
+    "url": "https://www.bhaskar.com/local/bihar/",
+    "districts": {
+      "katihar": {
+        "name": "कटिहार",
+        "url": "https://www.bhaskar.com/local/bihar/katihar/"
+      },
+      "patna": {
+        "name": "पटना",
+        "url": "https://www.bhaskar.com/local/bihar/patna/"
+      },
+      "begusarai": {
+        "name": "बेगूसराय",
+        "url": "https://www.bhaskar.com/local/bihar/begusarai/"
+      },
+      "buxar": {
+        "name": "बक्सर",
+        "url": "https://www.bhaskar.com/local/bihar/buxar/"
+      },
+      "kishanganj": {
+        "name": "किशनगंज (बिहार)",
+        "url": "https://www.bhaskar.com/local/bihar/kishanganj/"
+      },
+      "gopalganj": {
+        "name": "गोपालगंज",
+        "url": "https://www.bhaskar.com/local/bihar/gopalganj/"
+      },
+      "munger": {
+        "name": "मुंगेर",
+        "url": "https://www.bhaskar.com/local/bihar/munger/"
+      },
+      "saharsa": {
+        "name": "सहरसा",
+        "url": "https://www.bhaskar.com/local/bihar/saharsa/"
+      },
+      "darbhanga": {
+        "name": "दरभंगा",
+        "url": "https://www.bhaskar.com/local/bihar/darbhanga/"
+      },
+      "samastipur": {
+        "name": "समस्तीपुर",
+        "url": "https://www.bhaskar.com/local/bihar/samastipur/"
+      },
+      "aurangabad": {
+        "name": "औरंगाबाद (बिहार)",
+        "url": "https://www.bhaskar.com/local/bihar/aurangabad/"
+      },
+      "purnia": {
+        "name": "पूर्णिया",
+        "url": "https://www.bhaskar.com/local/bihar/purnia/"
+      },
+      "bhojpur": {
+        "name": "भोजपुर",
+        "url": "https://www.bhaskar.com/local/bihar/bhojpur/"
+      },
+      "gaya": {
+        "name": "गया",
+        "url": "https://www.bhaskar.com/local/bihar/gaya/"
+      },
+      "nalanda": {
+        "name": "नालंदा",
+        "url": "https://www.bhaskar.com/local/bihar/nalanda/"
+      },
+      "madhubani": {
+        "name": "मधुबनी",
+        "url": "https://www.bhaskar.com/local/bihar/madhubani/"
+      },
+      "siwan": {
+        "name": "सीवान",
+        "url": "https://www.bhaskar.com/local/bihar/siwan/"
+      },
+      "nawada": {
+        "name": "नवादा",
+        "url": "https://www.bhaskar.com/local/bihar/nawada/"
+      },
+      "sitamarhi": {
+        "name": "सीतामढ़ी",
+        "url": "https://www.bhaskar.com/local/bihar/sitamarhi/"
+      },
+      "madhepura": {
+        "name": "मधेपुरा",
+        "url": "https://www.bhaskar.com/local/bihar/madhepura/"
+      },
+      "supaul": {
+        "name": "सुपौल",
+        "url": "https://www.bhaskar.com/local/bihar/supaul/"
+      }
+    }
+  },
+  "chhattisgarh": {
+    "name": "छत्तीसगढ़",
+    "url": "https://www.bhaskar.com/local/chhattisgarh/",
+    "districts": {
+      "durg-bhilai": {
+        "name": "दुर्ग-भिलाई",
+        "url": "https://www.bhaskar.com/local/chhattisgarh/durg-bhilai/"
+      },
+      "raigarh": {
+        "name": "रायगढ़",
+        "url": "https://www.bhaskar.com/local/chhattisgarh/raigarh/"
+      },
+      "raipur": {
+        "name": "रायपुर",
+        "url": "https://www.bhaskar.com/local/chhattisgarh/raipur/"
+      },
+      "ambikapur": {
+        "name": "अंबिकापुर (सरगुजा)",
+        "url": "https://www.bhaskar.com/local/chhattisgarh/ambikapur/"
+      },
+      "bilaspur": {
+        "name": "बिलासपुर (छत्तीसगढ़)",
+        "url": "https://www.bhaskar.com/local/chhattisgarh/bilaspur/"
+      },
+      "rajnandgaon": {
+        "name": "राजनांदगांव",
+        "url": "https://www.bhaskar.com/local/chhattisgarh/rajnandgaon/"
+      },
+      "bastar": {
+        "name": "बस्तर",
+        "url": "https://www.bhaskar.com/local/chhattisgarh/bastar/"
+      },
+      "janjgir": {
+        "name": "जांजगीर चांपा",
+        "url": "https://www.bhaskar.com/local/chhattisgarh/janjgir/"
+      },
+      "kabirdham": {
+        "name": "कबीरधाम",
+        "url": "https://www.bhaskar.com/local/chhattisgarh/kabirdham/"
+      },
+      "balod": {
+        "name": "बालोद",
+        "url": "https://www.bhaskar.com/local/chhattisgarh/balod/"
+      },
+      "korba": {
+        "name": "कोरबा",
+        "url": "https://www.bhaskar.com/local/chhattisgarh/korba/"
+      }
+    }
+  },
+  "jharkhand": {
+    "name": "झारखंड",
+    "url": "https://www.bhaskar.com/local/jharkhand/",
+    "districts": {
+      "ranchi": {
+        "name": "रांची",
+        "url": "https://www.bhaskar.com/local/jharkhand/ranchi/"
+      },
+      "godda": {
+        "name": "गोड्डा",
+        "url": "https://www.bhaskar.com/local/jharkhand/godda/"
+      },
+      "giridih": {
+        "name": "गिरिडीह",
+        "url": "https://www.bhaskar.com/local/jharkhand/giridih/"
+      },
+      "ramgarh": {
+        "name": "रामगढ़ (झारखंड)",
+        "url": "https://www.bhaskar.com/local/jharkhand/ramgarh/"
+      },
+      "pakur": {
+        "name": "पाकुड़",
+        "url": "https://www.bhaskar.com/local/jharkhand/pakur/"
+      },
+      "chaibasa": {
+        "name": "चाईबासा (पश्चिमी सिंहभूम)",
+        "url": "https://www.bhaskar.com/local/jharkhand/chaibasa/"
+      },
+      "gumla": {
+        "name": "गुमला",
+        "url": "https://www.bhaskar.com/local/jharkhand/gumla/"
+      },
+      "hazaribagh": {
+        "name": "हजारीबाग",
+        "url": "https://www.bhaskar.com/local/jharkhand/hazaribagh/"
+      },
+      "bokaro": {
+        "name": "बोकारो",
+        "url": "https://www.bhaskar.com/local/jharkhand/bokaro/"
+      },
+      "chatra": {
+        "name": "चतरा",
+        "url": "https://www.bhaskar.com/local/jharkhand/chatra/"
+      },
+      "dhanbad": {
+        "name": "धनबाद",
+        "url": "https://www.bhaskar.com/local/jharkhand/dhanbad/"
+      },
+      "koderma": {
+        "name": "कोडरमा",
+        "url": "https://www.bhaskar.com/local/jharkhand/koderma/"
+      },
+      "palamu": {
+        "name": "पलामू",
+        "url": "https://www.bhaskar.com/local/jharkhand/palamu/"
+      },
+      "garhwa": {
+        "name": "गढ़वा",
+        "url": "https://www.bhaskar.com/local/jharkhand/garhwa/"
+      },
+      "jamshedpur": {
+        "name": "जमशेदपुर (पूर्वी सिंहभूम)",
+        "url": "https://www.bhaskar.com/local/jharkhand/jamshedpur/"
+      }
+    }
+  },
+  "haryana": {
+    "name": "हरियाणा",
+    "url": "https://www.bhaskar.com/local/haryana/",
+    "districts": {
+      "gurugram": {
+        "name": "गुरुग्राम",
+        "url": "https://www.bhaskar.com/local/haryana/gurugram/"
+      },
+      "jhajjar": {
+        "name": "झज्जर",
+        "url": "https://www.bhaskar.com/local/haryana/jhajjar/"
+      },
+      "kurukshetra": {
+        "name": "कुरुक्षेत्र",
+        "url": "https://www.bhaskar.com/local/haryana/kurukshetra/"
+      },
+      "panipat": {
+        "name": "पानीपत",
+        "url": "https://www.bhaskar.com/local/haryana/panipat/"
+      },
+      "rohtak": {
+        "name": "रोहतक",
+        "url": "https://www.bhaskar.com/local/haryana/rohtak/"
+      },
+      "panchkula": {
+        "name": "पंचकूला",
+        "url": "https://www.bhaskar.com/local/haryana/panchkula/"
+      },
+      "sonipat": {
+        "name": "सोनीपत",
+        "url": "https://www.bhaskar.com/local/haryana/sonipat/"
+      },
+      "hisar": {
+        "name": "हिसार",
+        "url": "https://www.bhaskar.com/local/haryana/hisar/"
+      },
+      "bhiwani": {
+        "name": "भिवानी",
+        "url": "https://www.bhaskar.com/local/haryana/bhiwani/"
+      },
+      "karnal": {
+        "name": "करनाल",
+        "url": "https://www.bhaskar.com/local/haryana/karnal/"
+      },
+      "rewari": {
+        "name": "रेवाड़ी",
+        "url": "https://www.bhaskar.com/local/haryana/rewari/"
+      },
+      "yamunanagar": {
+        "name": "यमुनानगर",
+        "url": "https://www.bhaskar.com/local/haryana/yamunanagar/"
+      },
+      "fatehabad": {
+        "name": "फतेहाबाद (हरियाणा)",
+        "url": "https://www.bhaskar.com/local/haryana/fatehabad/"
+      },
+      "kaithal": {
+        "name": "कैथल",
+        "url": "https://www.bhaskar.com/local/haryana/kaithal/"
+      },
+      "sirsa": {
+        "name": "सिरसा",
+        "url": "https://www.bhaskar.com/local/haryana/sirsa/"
+      },
+      "nuh": {
+        "name": "नूंह",
+        "url": "https://www.bhaskar.com/local/haryana/nuh/"
+      },
+      "faridabad": {
+        "name": "फरीदाबाद",
+        "url": "https://www.bhaskar.com/local/haryana/faridabad/"
+      },
+      "palwal": {
+        "name": "पलवल",
+        "url": "https://www.bhaskar.com/local/haryana/palwal/"
+      },
+      "mahendragarh": {
+        "name": "महेंद्रगढ़",
+        "url": "https://www.bhaskar.com/local/haryana/mahendragarh/"
+      },
+      "jind": {
+        "name": "जींद",
+        "url": "https://www.bhaskar.com/local/haryana/jind/"
+      }
+    }
+  },
+  "punjab": {
+    "name": "पंजाब",
+    "url": "https://www.bhaskar.com/local/punjab/",
+    "districts": {
+      "ludhiana": {
+        "name": "लुधियाना",
+        "url": "https://www.bhaskar.com/local/punjab/ludhiana/"
+      },
+      "pathankot": {
+        "name": "पठानकोट",
+        "url": "https://www.bhaskar.com/local/punjab/pathankot/"
+      },
+      "jalandhar": {
+        "name": "जालंधर",
+        "url": "https://www.bhaskar.com/local/punjab/jalandhar/"
+      },
+      "mohali": {
+        "name": "मोहाली",
+        "url": "https://www.bhaskar.com/local/punjab/mohali/"
+      },
+      "amritsar": {
+        "name": "अमृतसर",
+        "url": "https://www.bhaskar.com/local/punjab/amritsar/"
+      },
+      "gurdaspur": {
+        "name": "गुरदासपुर",
+        "url": "https://www.bhaskar.com/local/punjab/gurdaspur/"
+      },
+      "firozpur": {
+        "name": "फिरोजपुर",
+        "url": "https://www.bhaskar.com/local/punjab/firozpur/"
+      },
+      "malerkotla": {
+        "name": "मालेरकोटला",
+        "url": "https://www.bhaskar.com/local/punjab/malerkotla/"
+      },
+      "sangrur": {
+        "name": "संगरूर",
+        "url": "https://www.bhaskar.com/local/punjab/sangrur/"
+      },
+      "hoshiarpur": {
+        "name": "होशियारपुर",
+        "url": "https://www.bhaskar.com/local/punjab/hoshiarpur/"
+      },
+      "patiala": {
+        "name": "पटियाला",
+        "url": "https://www.bhaskar.com/local/punjab/patiala/"
+      },
+      "moga": {
+        "name": "मोगा",
+        "url": "https://www.bhaskar.com/local/punjab/moga/"
+      },
+      "nawanshahr": {
+        "name": "नवांशहर (शहीद भगत सिंह नगर)",
+        "url": "https://www.bhaskar.com/local/punjab/nawanshahr/"
+      }
+    }
+  },
+  "himachal": {
+    "name": "हिमाचल प्रदेश",
+    "url": "https://www.bhaskar.com/local/himachal/",
+    "districts": {
+      "mandi": {
+        "name": "मंडी (हिमाचल प्रदेश)",
+        "url": "https://www.bhaskar.com/local/himachal/mandi/"
+      },
+      "shimla": {
+        "name": "शिमला",
+        "url": "https://www.bhaskar.com/local/himachal/shimla/"
+      },
+      "kinnaur": {
+        "name": "किन्नौर",
+        "url": "https://www.bhaskar.com/local/himachal/kinnaur/"
+      },
+      "una": {
+        "name": "ऊना (हिमाचल प्रदेश)",
+        "url": "https://www.bhaskar.com/local/himachal/una/"
+      },
+      "kangra": {
+        "name": "कांगड़ा",
+        "url": "https://www.bhaskar.com/local/himachal/kangra/"
+      }
+    }
+  },
+  "uttarakhand": {
+    "name": "उत्तराखंड",
+    "url": "https://www.bhaskar.com/local/uttarakhand/",
+    "districts": {
+      "dehradun": {
+        "name": "देहरादून",
+        "url": "https://www.bhaskar.com/local/uttarakhand/dehradun/"
+      },
+      "pithoragarh": {
+        "name": "पिथौरागढ़",
+        "url": "https://www.bhaskar.com/local/uttarakhand/pithoragarh/"
+      },
+      "uttarkashi": {
+        "name": "उत्तरकाशी",
+        "url": "https://www.bhaskar.com/local/uttarakhand/uttarkashi/"
+      },
+      "haridwar": {
+        "name": "हरिद्वार",
+        "url": "https://www.bhaskar.com/local/uttarakhand/haridwar/"
+      },
+      "nainital": {
+        "name": "नैनीताल",
+        "url": "https://www.bhaskar.com/local/uttarakhand/nainital/"
+      },
+      "tehri-garhwal-tehri": {
+        "name": "टिहरी गढ़वाल(टिहरी)",
+        "url": "https://www.bhaskar.com/local/uttarakhand/tehri-garhwal-tehri/"
+      },
+      "chamoli": {
+        "name": "चमोली",
+        "url": "https://www.bhaskar.com/local/uttarakhand/chamoli/"
+      },
+      "udham-singh-nagar-rudrapur": {
+        "name": "ऊधम सिंह नगर (रुद्रपुर)",
+        "url": "https://www.bhaskar.com/local/uttarakhand/udham-singh-nagar-rudrapur/"
+      },
+      "rudraprayag": {
+        "name": "रुद्रप्रयाग",
+        "url": "https://www.bhaskar.com/local/uttarakhand/rudraprayag/"
+      },
+      "champawat": {
+        "name": "चम्पावत",
+        "url": "https://www.bhaskar.com/local/uttarakhand/champawat/"
+      },
+      "pauri-garhwal-pauri": {
+        "name": "पौड़ी गढ़वाल (पौड़ी)",
+        "url": "https://www.bhaskar.com/local/uttarakhand/pauri-garhwal-pauri/"
+      },
+      "bageshwar": {
+        "name": "बागेश्वर",
+        "url": "https://www.bhaskar.com/local/uttarakhand/bageshwar/"
+      },
+      "almora": {
+        "name": "अल्मोड़ा",
+        "url": "https://www.bhaskar.com/local/uttarakhand/almora/"
+      }
+    }
+  },
+  "gujarat": {
+    "name": "गुजरात",
+    "url": "https://www.bhaskar.com/local/gujarat/",
+    "districts": {
+      "surat": {
+        "name": "सूरत",
+        "url": "https://www.bhaskar.com/local/gujarat/surat/"
+      }
+    }
+  },
+  "maharashtra": {
+    "name": "महाराष्ट्र",
+    "url": "https://www.bhaskar.com/local/maharashtra/",
+    "districts": {
+      "mumbai": {
+        "name": "मुंबई",
+        "url": "https://www.bhaskar.com/local/maharashtra/mumbai/"
+      },
+      "pune": {
+        "name": "पुणे",
+        "url": "https://www.bhaskar.com/local/maharashtra/pune/"
+      }
+    }
+  },
+  "chandigarh": {
+    "name": "चंडीगढ़",
+    "url": "https://www.bhaskar.com/local/chandigarh/",
+    "districts": {}
+  },
+  "jammu-kashmir": {
+    "name": "जम्मू-कश्मीर",
+    "url": "https://www.bhaskar.com/local/jammu-kashmir/",
+    "districts": {}
+  }
+}

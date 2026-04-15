@@ -1,0 +1,12 @@
+{
+    "mcpServers": {
+        "ai-news-crawler": {
+            "command": "python",
+            "args": ["mcp_server.py"],
+            "cwd": "f:\\AI_NEWS",
+            "env": {
+                "PYTHONPATH": "f:\\AI_NEWS"
+            }
+        }
+    }
+}

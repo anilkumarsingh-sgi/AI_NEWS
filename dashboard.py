@@ -95,15 +95,17 @@ with st.sidebar:
     st.markdown("## ⚙️ Control Panel")
 
     client = OllamaClient()
-    ollama_ok = client.is_available()
-    if ollama_ok:
-        st.markdown('<span class="badge-online">● Ollama Online</span>', unsafe_allow_html=True)
+    llm_ok = client.is_available()
+    llm_provider = client.provider
+
+    if llm_ok:
+        st.markdown(f'<span class="badge-online">● LLM Online ({llm_provider.title()})</span>', unsafe_allow_html=True)
         models = client.list_models()
         default_idx = next((i for i, m in enumerate(models) if m == OLLAMA_MODEL), 0)
         selected_model = st.selectbox("Model", models, index=default_idx)
-        client = OllamaClient(model=selected_model)
+        client = OllamaClient(model=selected_model, provider=llm_provider)
     else:
-        st.markdown('<span class="badge-offline">● Ollama Offline</span>', unsafe_allow_html=True)
+        st.markdown('<span class="badge-offline">● LLM Offline</span>', unsafe_allow_html=True)
         selected_model = OLLAMA_MODEL
 
     st.markdown("---")
@@ -120,7 +122,7 @@ with st.sidebar:
 
     st.markdown("---")
     st.caption(f"Model: **{selected_model}**")
-    st.caption(f"Ollama: `{OLLAMA_BASE_URL}`")
+    st.caption(f"Provider: **{llm_provider.title()}**")
     st.caption(f"DB: `{DB_PATH}`")
 
 
@@ -290,15 +292,14 @@ with tab_crawl:
                 f"{'...' if len(_districts) > 15 else ''}"
             )
 
-            if not ollama_ok:
-                st.warning("⚠️ Ollama is **offline**. The crawl can discover article links but cannot extract accident data without an LLM. "
-                           "Make sure `OLLAMA_BASE_URL` points to a reachable Ollama server (not localhost on cloud).")
+            if not llm_ok:
+                st.warning("⚠️ LLM is **offline**. Add `GROQ_API_KEY` to Streamlit secrets for cloud crawling, "
+                           "or set `OLLAMA_BASE_URL` to a reachable Ollama server.")
 
             if st.button("🚀 Start Crawl", type="primary", key="btn_state_crawl"):
-                if not ollama_ok:
-                    st.error("Cannot crawl — Ollama LLM is not reachable. "
-                             f"Current URL: `{OLLAMA_BASE_URL}`. "
-                             "Set `OLLAMA_BASE_URL` in Streamlit secrets to a public Ollama endpoint.")
+                if not llm_ok:
+                    st.error("Cannot crawl — No LLM available. "
+                             "Add `GROQ_API_KEY` in Streamlit secrets (free at console.groq.com).")
                 else:
                     st.session_state["state_crawl_running"] = True
                     st.session_state["state_crawl_slug"] = _selected_slug
@@ -521,8 +522,8 @@ with tab_extract:
     with sub_tab_url:
         url = st.text_input("News URL", placeholder="https://hindi.news18.com/...")
         if st.button("🔍 Extract", key="btn_url", type="primary"):
-            if not ollama_ok:
-                st.error("Ollama is not running.")
+            if not llm_ok:
+                st.error("LLM is not available. Add `GROQ_API_KEY` in secrets.")
             elif url:
                 with st.spinner("Extracting..."):
                     t0 = time.time()
@@ -534,8 +535,8 @@ with tab_extract:
         text = st.text_area("Paste news content", height=150,
                             placeholder="ट्रक और कार की टक्कर में 2 लोगों की मौत...")
         if st.button("🔍 Extract", key="btn_text", type="primary"):
-            if not ollama_ok:
-                st.error("Ollama is not running.")
+            if not llm_ok:
+                st.error("LLM is not available. Add `GROQ_API_KEY` in secrets.")
             elif text:
                 with st.spinner("Extracting..."):
                     t0 = time.time()
@@ -546,7 +547,7 @@ with tab_extract:
     with sub_tab_batch:
         batch = st.text_area("URLs (one per line)", height=120)
         if st.button("🔍 Extract All", key="btn_batch", type="primary"):
-            if batch and ollama_ok:
+            if batch and llm_ok:
                 urls = [u.strip() for u in batch.splitlines() if u.strip()]
                 all_recs = []
                 prog = st.progress(0)
@@ -642,9 +643,8 @@ with tab_search:
 # ── Trigger crawl handling ───────────────────────────────────────
 if st.session_state.get("trigger_crawl"):
     st.session_state["trigger_crawl"] = False
-    if not ollama_ok:
-        st.error(f"Cannot crawl — Ollama is not reachable at `{OLLAMA_BASE_URL}`. "
-                 "Set `OLLAMA_BASE_URL` in Streamlit secrets to a public Ollama endpoint.")
+    if not llm_ok:
+        st.error("Cannot crawl — No LLM available. Add `GROQ_API_KEY` in Streamlit secrets.")
     else:
         with st.spinner("Running multi-agent crawl... This may take several minutes."):
             try:

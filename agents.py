@@ -29,6 +29,7 @@ from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_excep
 
 from config import (
     OLLAMA_BASE_URL, OLLAMA_MODEL, OLLAMA_TIMEOUT,
+    GROQ_API_KEY, GROQ_MODEL, LLM_PROVIDER,
     OUTPUT_DIR, MAX_CONCURRENT_STATES, MAX_CONCURRENT_DISTRICTS,
     REQUEST_DELAY, MAX_ARTICLES_PER_DISTRICT,
 )
@@ -36,6 +37,24 @@ from database import AccidentDB
 from keywords import is_accident_content, HINDI_KEYWORDS, ENG_URL_PATTERN, ENG_HEADLINE_PATTERN
 from processor import validate_record
 from prompts import SYSTEM_PROMPT
+
+GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
+
+
+def _detect_llm_provider() -> str:
+    """Detect which LLM provider to use: ollama or groq."""
+    if LLM_PROVIDER and LLM_PROVIDER != "auto":
+        return LLM_PROVIDER
+    try:
+        import requests
+        r = requests.get(f"{OLLAMA_BASE_URL}/api/tags", timeout=5)
+        if r.status_code == 200:
+            return "ollama"
+    except Exception:
+        pass
+    if GROQ_API_KEY:
+        return "groq"
+    return "ollama"
 
 HEADERS = {
     "User-Agent": (
@@ -148,12 +167,15 @@ class DiscoveryAgent:
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 class ExtractionAgent:
-    """Scrapes article content and extracts accident data via Ollama LLM."""
+    """Scrapes article content and extracts accident data via LLM (Ollama or Groq)."""
 
-    def __init__(self, session: aiohttp.ClientSession, rate_limiter: asyncio.Semaphore):
+    def __init__(self, session: aiohttp.ClientSession, rate_limiter: asyncio.Semaphore,
+                 llm_provider: str = "auto"):
         self.session = session
         self.rate_limiter = rate_limiter
+        self.llm_provider = llm_provider if llm_provider != "auto" else _detect_llm_provider()
         self.ollama_url = f"{OLLAMA_BASE_URL}/api/chat"
+        logger.info(f"ExtractionAgent using LLM provider: {self.llm_provider}")
 
     async def scrape_article(self, url: str) -> str:
         async with self.rate_limiter:
@@ -184,8 +206,13 @@ class ExtractionAgent:
         wait=wait_exponential(multiplier=2, min=3, max=15),
         retry=retry_if_exception_type((aiohttp.ClientError, asyncio.TimeoutError)),
     )
-    async def call_ollama(self, text: str) -> list[dict]:
-        """Send text to Ollama and parse JSON."""
+    async def call_llm(self, text: str) -> list[dict]:
+        """Send text to LLM (Ollama or Groq) and parse JSON."""
+        if self.llm_provider == "groq":
+            return await self._call_groq(text)
+        return await self._call_ollama(text)
+
+    async def _call_ollama(self, text: str) -> list[dict]:
         payload = {
             "model": OLLAMA_MODEL,
             "messages": [
@@ -208,6 +235,36 @@ class ExtractionAgent:
                 return self._parse_json(raw)
         except Exception as e:
             logger.error(f"Ollama call failed: {e}")
+            raise
+
+    async def _call_groq(self, text: str) -> list[dict]:
+        payload = {
+            "model": GROQ_MODEL,
+            "messages": [
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": text},
+            ],
+            "temperature": 0.1,
+            "max_tokens": 4096,
+        }
+        headers = {
+            "Authorization": f"Bearer {GROQ_API_KEY}",
+            "Content-Type": "application/json",
+        }
+        try:
+            async with self.session.post(
+                GROQ_API_URL, json=payload, headers=headers,
+                timeout=aiohttp.ClientTimeout(total=OLLAMA_TIMEOUT),
+            ) as resp:
+                if resp.status != 200:
+                    body = await resp.text()
+                    logger.error(f"Groq HTTP {resp.status}: {body[:200]}")
+                    return []
+                data = await resp.json()
+                raw = data["choices"][0]["message"]["content"]
+                return self._parse_json(raw)
+        except Exception as e:
+            logger.error(f"Groq call failed: {e}")
             raise
 
     def _parse_json(self, text: str) -> list[dict]:
@@ -239,7 +296,7 @@ class ExtractionAgent:
             return []
 
         try:
-            raw_records = await self.call_ollama(text)
+            raw_records = await self.call_llm(text)
         except Exception:
             return []
 

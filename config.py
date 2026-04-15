@@ -30,6 +30,11 @@ OLLAMA_BASE_URL = _get("OLLAMA_BASE_URL", "http://localhost:11434")
 OLLAMA_MODEL = _get("OLLAMA_MODEL", "mistral:7b")
 OLLAMA_TIMEOUT = int(_get("OLLAMA_TIMEOUT", "120"))
 
+# ── Groq Cloud LLM (fallback when Ollama is unreachable) ────────
+GROQ_API_KEY = _get("GROQ_API_KEY", "")
+GROQ_MODEL = _get("GROQ_MODEL", "llama-3.1-8b-instant")
+LLM_PROVIDER = _get("LLM_PROVIDER", "auto")  # "ollama", "groq", or "auto"
+
 # ── Extraction Settings ─────────────────────────────────────────
 MAX_RAW_TEXT_LENGTH = int(_get("MAX_RAW_TEXT_LENGTH", "500"))
 DEFAULT_SOURCE = "news"

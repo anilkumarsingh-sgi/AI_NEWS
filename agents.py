@@ -41,6 +41,17 @@ from prompts import SYSTEM_PROMPT
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 
+def _get_groq_key() -> str:
+    """Get Groq API key — check config first, then st.secrets at runtime."""
+    if GROQ_API_KEY:
+        return GROQ_API_KEY
+    try:
+        import streamlit as st
+        return str(st.secrets.get("GROQ_API_KEY", ""))
+    except Exception:
+        return ""
+
+
 def _detect_llm_provider() -> str:
     """Detect which LLM provider to use: ollama or groq."""
     if LLM_PROVIDER and LLM_PROVIDER != "auto":
@@ -52,7 +63,7 @@ def _detect_llm_provider() -> str:
             return "ollama"
     except Exception:
         pass
-    if GROQ_API_KEY:
+    if _get_groq_key():
         return "groq"
     return "ollama"
 
@@ -238,6 +249,7 @@ class ExtractionAgent:
             raise
 
     async def _call_groq(self, text: str) -> list[dict]:
+        api_key = _get_groq_key()
         payload = {
             "model": GROQ_MODEL,
             "messages": [
@@ -248,7 +260,7 @@ class ExtractionAgent:
             "max_tokens": 4096,
         }
         headers = {
-            "Authorization": f"Bearer {GROQ_API_KEY}",
+            "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
         }
         try:

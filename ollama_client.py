@@ -13,6 +13,17 @@ from prompts import SYSTEM_PROMPT
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 
+def _get_groq_key() -> str:
+    """Get Groq API key — check config first, then st.secrets at runtime."""
+    if GROQ_API_KEY:
+        return GROQ_API_KEY
+    try:
+        import streamlit as st
+        return str(st.secrets.get("GROQ_API_KEY", ""))
+    except Exception:
+        return ""
+
+
 class OllamaClient:
     """Handles communication with Ollama (local) or Groq (cloud)."""
 
@@ -31,7 +42,7 @@ class OllamaClient:
         # Auto: prefer Ollama if reachable, else Groq
         if self._ollama_reachable():
             return "ollama"
-        if GROQ_API_KEY:
+        if _get_groq_key():
             return "groq"
         return "ollama"  # will show offline
 
@@ -45,7 +56,7 @@ class OllamaClient:
     # ── health check ────────────────────────────────────────────
     def is_available(self) -> bool:
         if self.provider == "groq":
-            return bool(GROQ_API_KEY)
+            return bool(_get_groq_key())
         return self._ollama_reachable()
 
     def list_models(self) -> list[str]:
@@ -83,8 +94,8 @@ class OllamaClient:
         return resp.json()["message"]["content"]
 
     def _generate_groq(self, user_prompt: str) -> str:
-        model = self.model if self.provider == "groq" else GROQ_MODEL
-        # Groq uses standard OpenAI-compatible API
+        model = self.model if self._provider == "groq" else GROQ_MODEL
+        api_key = _get_groq_key()
         payload = {
             "model": model,
             "messages": [
@@ -98,7 +109,7 @@ class OllamaClient:
             GROQ_API_URL,
             json=payload,
             headers={
-                "Authorization": f"Bearer {GROQ_API_KEY}",
+                "Authorization": f"Bearer {api_key}",
                 "Content-Type": "application/json",
             },
             timeout=self.timeout,

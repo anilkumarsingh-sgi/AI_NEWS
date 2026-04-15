@@ -22,7 +22,7 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
-from config import OLLAMA_MODEL, DB_PATH, SCHEDULE_HOUR, SCHEDULE_MINUTE, OUTPUT_DIR
+from config import OLLAMA_MODEL, OLLAMA_BASE_URL, DB_PATH, SCHEDULE_HOUR, SCHEDULE_MINUTE, OUTPUT_DIR
 from ollama_client import OllamaClient
 from processor import process_url, process_text
 from scraper import scrape_news
@@ -120,6 +120,7 @@ with st.sidebar:
 
     st.markdown("---")
     st.caption(f"Model: **{selected_model}**")
+    st.caption(f"Ollama: `{OLLAMA_BASE_URL}`")
     st.caption(f"DB: `{DB_PATH}`")
 
 
@@ -289,10 +290,19 @@ with tab_crawl:
                 f"{'...' if len(_districts) > 15 else ''}"
             )
 
+            if not ollama_ok:
+                st.warning("⚠️ Ollama is **offline**. The crawl can discover article links but cannot extract accident data without an LLM. "
+                           "Make sure `OLLAMA_BASE_URL` points to a reachable Ollama server (not localhost on cloud).")
+
             if st.button("🚀 Start Crawl", type="primary", key="btn_state_crawl"):
-                st.session_state["state_crawl_running"] = True
-                st.session_state["state_crawl_slug"] = _selected_slug
-                st.session_state["state_crawl_max"] = _max_articles
+                if not ollama_ok:
+                    st.error("Cannot crawl — Ollama LLM is not reachable. "
+                             f"Current URL: `{OLLAMA_BASE_URL}`. "
+                             "Set `OLLAMA_BASE_URL` in Streamlit secrets to a public Ollama endpoint.")
+                else:
+                    st.session_state["state_crawl_running"] = True
+                    st.session_state["state_crawl_slug"] = _selected_slug
+                    st.session_state["state_crawl_max"] = _max_articles
 
         # Run crawl if triggered
         if st.session_state.get("state_crawl_running"):
@@ -329,9 +339,21 @@ with tab_crawl:
                     mc3.metric("Districts", _crawl_stats.get('districts', 0))
                     mc4.metric("Articles Found", _crawl_stats.get('articles', 0))
 
+                    # Diagnostics if no records
+                    if _crawl_stats.get('new', 0) == 0 and _crawl_stats.get('dup', 0) == 0:
+                        st.warning("**No accident records extracted.** Possible causes:")
+                        diag = []
+                        if _crawl_stats.get('articles', 0) == 0:
+                            diag.append("- **Discovery failed**: Bhaskar.com may be blocking this server's IP. Try again later or run locally.")
+                        else:
+                            diag.append(f"- **{_crawl_stats.get('articles', 0)} links found** but extraction failed.")
+                            diag.append(f"- **Ollama URL**: `{OLLAMA_BASE_URL}` — is this reachable from the server?")
+                            diag.append("- If running on Streamlit Cloud, `localhost` won't work. Set `OLLAMA_BASE_URL` in secrets to a public endpoint.")
+                        st.markdown("\n".join(diag))
+
                     # Show errors if any
                     if _crawl_stats.get('errors'):
-                        with st.expander("⚠️ Errors", expanded=False):
+                        with st.expander("⚠️ Errors", expanded=True):
                             for _err in _crawl_stats['errors']:
                                 st.warning(_err)
 
@@ -620,15 +642,22 @@ with tab_search:
 # ── Trigger crawl handling ───────────────────────────────────────
 if st.session_state.get("trigger_crawl"):
     st.session_state["trigger_crawl"] = False
-    with st.spinner("Running multi-agent crawl... This may take several minutes."):
-        try:
-            from agents import OrchestratorAgent
-            orch = OrchestratorAgent(max_articles=3)
-            stats = asyncio.run(orch.run())
-            st.success(f"✅ Crawl complete: {stats.get('new', 0)} new records!")
-            st.rerun()
-        except Exception as e:
-            st.error(f"Crawl failed: {e}")
+    if not ollama_ok:
+        st.error(f"Cannot crawl — Ollama is not reachable at `{OLLAMA_BASE_URL}`. "
+                 "Set `OLLAMA_BASE_URL` in Streamlit secrets to a public Ollama endpoint.")
+    else:
+        with st.spinner("Running multi-agent crawl... This may take several minutes."):
+            try:
+                from agents import OrchestratorAgent
+                orch = OrchestratorAgent(max_articles=3)
+                stats = asyncio.run(orch.run())
+                st.success(f"✅ Crawl complete: {stats.get('new', 0)} new records!")
+                if stats.get('new', 0) == 0:
+                    st.warning(f"No records found. Articles discovered: {stats.get('articles', 0)}. "
+                               f"Errors: {len(stats.get('errors', []))}")
+                st.rerun()
+            except Exception as e:
+                st.error(f"Crawl failed: {e}")
 
 
 # ── Auto-refresh ────────────────────────────────────────────────
